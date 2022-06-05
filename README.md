@@ -1,7 +1,7 @@
 ````
 $ pkg update && pkg upgrade -y
 $ pkg install git
-$ git clone https://github.com/Arya-Blitar22/OpenClash
+$ git clone https://github.com/DAMARJATI88/OpenClash
 $ cd OpenClash
 $ bash install.sh
 Untuk Berhenti
@@ -29,8 +29,3 @@ Untuk Runing Buka Google/Crome
 Masukkan Alamat
 http://127.0.0.1:9090/ui/#/proxies
 Klik Pojok Bawah Petir Hingga Ping Angka Kluar
-
-- Tutornya Di Yt Arya Channel99
-Yg Mau Order Akun Monggo
-- Wa 087721815317
-````
