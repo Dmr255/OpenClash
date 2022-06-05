@@ -17,7 +17,6 @@ Config Berisi
 - Format TrojanGo
 - Trojan Grpc
 - Format Trojan Ssl
-- SadhowsoksSsr
 Silahkan Edit Sesuai Simc Card Sawer Kalian
 Untuk Jalankan Kembali Ketik clash (enter)
 Seting Apn Kalian
@@ -29,3 +28,6 @@ Untuk Runing Buka Google/Crome
 Masukkan Alamat
 http://127.0.0.1:9090/ui/#/proxies
 Klik Pojok Bawah Petir Hingga Ping Angka Kluar
+
+Creator
+https://github.com/Arya-Blitar22/
