@@ -23,6 +23,38 @@ dns:
     - https://dns.google/dns-query
 #vmess   
 proxies:
+#vmess
+  - name: vmess
+    server: bug.com
+    port: port
+    type: vmess
+    uuid: uuid
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: hostname
+    network: ws
+    ws-opts:
+      path: /path/
+      headers:
+        Host: hostname
+    udp: true
+#vmessGrpc
+  - name: vmessGrpc
+    server: bug.com
+    port: 443
+    type: vmess
+    uuid: uuid
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: hostname
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpc
+    udp: true
 #Trojan-ssl
   - name: dmr
     server: 172.105.119.7
@@ -48,31 +80,44 @@ proxies:
     skip-cert-verify: true
     sni: video.joox.com
     udp: true
-  - name: Trojan-Ssl1
-    server: 103.93.59.208
+#trojango
+  - name: trgo
+    server: hostname
     port: 443
     type: trojan
-    password: 742f9630-d0bc-11ec-b8c1-1239d0255272
+    password: uuid
     skip-cert-verify: true
-    sni: pubgmobile.com
-    udp: true
-  - name: Trojan-Ssl2
-    server: 103.93.59.208
-    port: 443
+    sni: hostname
+    network: ws
+    ws-opts:
+      path: /path
+      headers:
+        Host: hostname
+#trojanGrpc
+  - name: TrojanGrpc
+    server: bug.com
+    port: 8443
     type: trojan
-    password: 742f9630-d0bc-11ec-b8c1-1239d0255272
+    password: password
     skip-cert-verify: true
-    sni: pubgmobile.com
+    sni: hostname
+    network: grpc
+    grpc-opts:
+      grpc-service-name: xray-trojan-grpc
     udp: true
 proxy-groups:
   - name: Damarr
     type: select
     proxies:
+      - vmess
+      - vmessGrpc
       - dmr
       - idhw1
       - unlihw1
       - Trojan-Ssl1
       - Trojan-Ssl2
+      - trgo
+      - TrojanGrpc
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,32 +128,44 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
+      - vmess
+      - vmessGrpc
       - dmr
       - idhw1
       - unlihw1
       - Trojan-Ssl1
       - Trojan-Ssl2
+      - trgo
+      - TrojanGrpc
   - name: BEST-PING
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
+      - vmess
+      - vmessGrpc
       - dmr
       - idhw1
       - unlihw1
       - Trojan-Ssl1
       - Trojan-Ssl2
+      - trgo
+      - TrojanGrpc
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
+      - vmess
+      - vmessGrpc
       - dmr
       - idhw1
       - unlihw1
       - Trojan-Ssl1
       - Trojan-Ssl2
+      - trgo
+      - TrojanGrpc
 rule-providers:
   clash:
     type: http
