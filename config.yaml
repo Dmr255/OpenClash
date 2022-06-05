@@ -65,7 +65,7 @@ proxies:
     sni: pubgmobile.com
     udp: true
 proxy-groups:
-  - name: GRUP-BLITAR-CANTIK
+  - name: Damarr
     type: select
     proxies:
       - dmr
