@@ -23,7 +23,7 @@ Seting Apn Kalian
 Nama : Bebas
 Apn : Bebas/internet
 Proxy : 127.0.0.1
-Port : 10809
+Port : 7890 atau 10809
 Untuk Runing Buka Google/Crome
 Masukkan Alamat
 http://127.0.0.1:9090/ui/#/proxies
